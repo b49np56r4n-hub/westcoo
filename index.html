@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A West Co | Houston's Premium Construction & Remodeling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c9a63c; /* A polished gold accent */
+            --dark: #121212; /* Modern premium dark */
+            --light: #ffffff;
+            --off-white: #f8f8f8;
+            --text-dark: #333;
+            --header-font: 'Oswald', sans-serif;
+            --body-font: 'Roboto', sans-serif;
+        }
+
+        body { font-family: var(--body-font); margin: 0; line-height: 1.6; color: var(--text-dark); background: var(--light); scroll-behavior: smooth; }
+        
+        /* Navigation (Modern & Clean) */
+        nav { background: var(--light); color: var(--dark); padding: 0.8rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.08); }
+        
+        /* LOGO - Use text for now, but style it like a brand */
+        .logo-text { font-family: var(--header-font); font-size: 1.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--dark); border-left: 5px solid var(--primary); padding-left: 10px; }
+        
+        .nav-contact-btn { background: var(--dark); color: white; text-decoration: none; padding: 10px 20px; font-weight: bold; border-radius: 2px; transition: 0.3s; text-transform: uppercase; font-size: 0.9rem;}
+        .nav-contact-btn:hover { background: var(--primary); }
+
+        /* Hero Section (A professional remodeling scene) */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1621905235254-75812eb123b4?q=80&w=2069&auto=format&fit=crop'); 
+            background-size: cover; background-position: center;
+            height: 80vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
+        }
+        .hero h2 { font-family: var(--header-font); font-size: 4rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;}
+        .hero p { font-size: 1.3rem; max-width: 700px; margin-bottom: 35px; color: #eee; font-weight: 300; }
+        .btn-gold { background: var(--primary); color: var(--dark); padding: 15px 45px; text-decoration: none; font-weight: bold; border-radius: 2px; display: inline-block; font-size: 1rem; text-transform: uppercase; transition: 0.3s; letter-spacing: 1px; }
+        .btn-gold:hover { background: #b08f30; color: white;}
+
+        /* Section Styling */
+        section { padding: 100px 5%; }
+        .section-title { font-family: var(--header-font); text-align: center; font-size: 3rem; text-transform: uppercase; margin-bottom: 10px; color: var(--dark); }
+        .section-subtitle { text-align: center; color: #777; max-width: 650px; margin: 0 auto 70px auto; font-size: 1.15rem; font-weight: 300; }
+
+        /* Services (Sleek Grid) */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: var(--off-white); padding: 50px 30px; border-radius: 3px; text-align: center; transition: all 0.3s ease; border-top: 4px solid transparent; position: relative;}
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.06); border-top-color: var(--primary); }
+        .service-card h3 { font-family: var(--header-font); font-size: 1.6rem; color: var(--dark); margin-top: 0; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;}
+        .service-card p { font-size: 1rem; color: #666; font-weight: 300; }
+
+        /* Portfolio/Before & After Gallery (STUNNING MODERN GRID) */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 15px; }
+        
+        .gallery-item { position: relative; overflow: hidden; border-radius: 4px; aspect-ratio: 16/10; transition: 0.3s; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s ease; filter: brightness(90%); }
+        .gallery-item:hover img { transform: scale(1.05); filter: brightness(100%); }
+        
+        /* Project overlay with details */
+        .project-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; padding: 25px; transition: 0.4s; transform: translateY(10px); opacity: 0; }
+        .gallery-item:hover .project-overlay { transform: translateY(0); opacity: 1; }
+        .project-category { text-transform: uppercase; font-size: 0.8rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; margin-bottom: 5px; }
+        .project-title { font-family: var(--header-font); font-size: 1.5rem; margin: 0; font-weight: 500;}
+
+        /* Contact (Clean & Focused) */
+        .contact { background: var(--dark); color: white; text-align: center; }
+        .contact .section-title { color: white; }
+        .contact .section-subtitle { color: #aaa; }
+        .contact-details { font-size: 1.3rem; margin-top: 40px; }
+        .contact-details p { margin: 10px 0; font-weight: 300;}
+        .contact-details a { color: var(--primary); text-decoration: none; font-weight: 700; }
+        .contact-details a:hover { color: white; }
+
+        footer { background: #0a0a0a; color: #555; text-align: center; padding: 30px; font-size: 0.9rem; font-weight: 300; }
+        footer strong { color: #888; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo-text">A WEST CO</div> 
+    
+    <a href="tel:7134934803" class="nav-contact-btn">Request a Quote</a>
+</nav>
+
+<section class="hero">
+    <h2>Exceptional Quality.</h2>
+    <p>Houston’s premier experts in full-service remodeling, professional roofing, and turnkey construction. We build excellence.</p>
+    <a href="#contact" class="btn-gold">Start Your Project</a>
+</section>
+
+<section id="services">
+    <h2 class="section-title">Master Craftsmanship</h2>
+    <p class="section-subtitle">We don’t just build; we deliver comprehensive construction solutions. If you need it done, we handle it with precision.</p>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Full Remodeling</h3>
+            <p>From modern kitchen overhauls to luxurious bathroom retreats, we transform your space to meet your highest standards.</p>
+        </div>
+        <div class="service-card">
+            <h3>Expert Roofing</h3>
+            <p>Professional installations and precision repairs. We provide robust roofing solutions built to withstand the elements.</p>
+        </div>
+        <div class="service-card">
+            <h3>General Contracting</h3>
+            <p>Your turnkey partner for structural additions, complete renovations, and any comprehensive construction needs.</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery" style="background: var(--off-white); padding-bottom: 120px;">
+    <h2 class="section-title">Our Featured Projects</h2>
+    <p class="section-subtitle">A showcase of the precision, quality, and stunning results we deliver across Houston.</p>
+    
+    <div class="gallery-grid">
+        
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?q=80&w=800&auto=format&fit=crop" alt="A West Co Kitchen Remodel">
+            <div class="project-overlay">
+                <div class="project-category">Remodeling</div>
+                <h4 class="project-title">Modern Kitchen Transformation</h4>
+            </div>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800&auto=format&fit=crop" alt="A West Co Bathroom Remodel">
+            <div class="project-overlay">
+                <div class="project-category">Remodeling</div>
+                <h4 class="
